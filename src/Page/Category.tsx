@@ -2,7 +2,7 @@ import { Box, Container, Image, SimpleGrid } from '@chakra-ui/react';
 import { enableState, userInfo } from '../state/recoil_state';
 import { useState, useEffect } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import { photo } from '../photo';
+import IMAGES from '../IMAGES';
 
 
 
@@ -16,7 +16,7 @@ export default function Category() {
   useEffect(() => {
     if (checkedItems.length >= 3) {
       setEnable(false)
-    }else{
+    } else {
       setEnable(true)
 
     }
@@ -43,7 +43,7 @@ export default function Category() {
         <h1 className="text-[28px] text-[#434E61] font-bold">Tell us what you’re interested in</h1>
       </Container>
       <SimpleGrid className="mt-5" columns={[2, 3, 4]} spacing={5}>
-        {title.map((item, index) => (
+        {title.map((item, index: number) => (
           <Box key={index} className="relative" width="138px">
             <input
               type="checkbox"
@@ -60,7 +60,7 @@ export default function Category() {
               htmlFor={String(index)}
               className="inline-flex items-center justify-between rounded-[10px] cursor-pointer border-2 border-transparent peer-hover:border-[#FF8C1E] peer-hover:border-2  peer-checked:border-[#FF8C1E] peer-checked:border-2"
             >
-              <Image className="rounded-[10px]" boxSize="125px" src={photo[index]} alt="category" />
+              <Image className="rounded-[10px]" boxSize="125px" src={IMAGES[index]} alt="category" />
               <p className="absolute top-[70%] left-[10%] text-white">{item}</p>
             </label>
           </Box>
