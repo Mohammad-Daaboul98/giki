@@ -5,6 +5,7 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import { photo } from '../photo';
 
 
+
 export default function Category() {
   const [user, setUser] = useRecoilState(userInfo);
   const [checkedItems, setCheckedItems] = useState<string[]>(user.interest);
@@ -15,6 +16,9 @@ export default function Category() {
   useEffect(() => {
     if (checkedItems.length >= 3) {
       setEnable(false)
+    }else{
+      setEnable(true)
+
     }
   }, [checkedItems])
 
