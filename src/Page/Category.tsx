@@ -2,8 +2,8 @@ import { Box, Container, Image, SimpleGrid } from '@chakra-ui/react';
 import { enableState, userInfo } from '../state/recoil_state';
 import { useState, useEffect } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import IMAGES from '../IMAGES';
-
+import IMAGES from '../assets/IMAGES';
+import check from '../assets/check.svg'
 
 
 export default function Category() {
@@ -54,7 +54,7 @@ export default function Category() {
               onChange={() => handleCheckboxChange(item)}
             />
             {checkedItems.includes(item) ? (
-              <Image src="src/assets/check.svg" className="absolute right-5 top-3" alt="checkbox" />
+              <Image src={String(check)} className="absolute right-5 top-3" alt="checkbox" />
             ) : null}
             <label
               htmlFor={String(index)}
