@@ -60,7 +60,7 @@ export default function Category() {
               htmlFor={String(index)}
               className="inline-flex items-center justify-between rounded-[10px] cursor-pointer border-2 border-transparent peer-hover:border-[#FF8C1E] peer-hover:border-2  peer-checked:border-[#FF8C1E] peer-checked:border-2"
             >
-              <Image className="rounded-[10px]" boxSize="125px" src={IMAGES[index]} alt="category" />
+              <Image className="rounded-[10px]" boxSize="125px" src={IMAGES[index + 1]} alt="category" />
               <p className="absolute top-[70%] left-[10%] text-white">{item}</p>
             </label>
           </Box>
